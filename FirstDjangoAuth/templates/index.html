@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<body>
+    <h1>Signup Form</h1>
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+    <form method="post" >
+        {% csrf_token %}
+        <label for="phone_number">Phone Number:</label><br>
+        <input type="text" id="phone_number" name="phone_number" required><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        <label for="otp">OTP:</label><br>
+        <input type="text" id="otp" name="otp" required><br>
+        <label for="referal_code">Referral Code (if any):</label><br>
+        <input type="text" id="referal_code" name="referal_code"><br>
+        <input type="submit" name="submit" value="Signup">
+    </form>
+</body>
+</html>

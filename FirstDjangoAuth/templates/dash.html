@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link rel="stylesheet" href="/static/dist1/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+  <div class="layout">
+
+    <a class="header" href="#0">
+      <i class="fa fa-bars"></i>
+      <div class="header-user"><i class="fas fa-user-circle icon"></i>Hello John Dee</div>
+    </a>
+
+    <div class="sidebar">
+      <ul>
+        <li> <a class="sidebar-list-item" href="#0"> <i class="fas fa-home icon"></i><em>Dashboard</em></a></li>
+        <li> <a class="sidebar-list-item" href="#0"> <i class="fas fa-user icon"></i><em>Users</em></a></li>
+        <li> <a class="sidebar-list-item" href="#0"> <i class="fas fa-tasks icon"></i><em>Projects</em></a></li>
+        <li> <a class="sidebar-list-item active" href="#0"> <i class="fas fa-calendar icon"></i><em>Events</em></a>
+        </li>
+        <li> <a class="sidebar-list-item" href="#0"> <i class="fas fa-toolbox icon"></i><em>Preferences</em></a>
+        </li>
+        <li> <a class="sidebar-list-item" href="#0"> <i class="fas fa-comments icon"></i><em>Feedback</em></a></li>
+        <li> <a class="sidebar-list-item" href="{% url 'logout_page' %}"> <i class="fas fa-lightbulb icon"></i><em>Log out</em></a>
+        </li>
+      </ul>
+    </div>
+
+    <main class="content">
+      <div class="main-header">
+        <div class="main-title">
+          <h1>New Event</h1>
+        </div>
+        <div class="main-form">
+          <form name="event">
+            <input type="text" id="ftitle" placeholder="Add title">
+            <input type="text" id="fdescription" placeholder="Add description">
+            <input type="text" id="flocation" placeholder="Add location">
+
+            <div class="input-group">
+              <input type="date" id="fdate">
+              <label for="fallday" class="all_day">All day:</label>
+              <input type="checkbox" class="checkbox" id="fallday" onchange="form_display_hour()">
+            </div>
+
+            <div class="input-hour">
+              <div id="fhourdiv">
+                <input type="time" id="fstart" class="hour" onchange="form_validate_hour()">
+                <input type="time" id="fend" class="hour" onchange="form_validate_hour()">
+              </div>
+            </div>
+
+            <input type="submit" id="fsubmit" value="Save" class="button">
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer_sign">made with <span class="fas fa-heart"></span> by <a href="https://mafda.github.io/" target="blank">mafda</a></div>
+    </footer>
+
+  </div>
+</body>
+<!-- partial -->
+  <script  src="/static/dist1/script.js"></script>
+
+</body>
+</html>
